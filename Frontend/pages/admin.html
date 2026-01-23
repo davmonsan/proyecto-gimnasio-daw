@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PowerGym · Administración</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+
+  <div class="menu">
+
+    <a href="perfil.html" class="menu-item">
+      <img src="../imagenes/person.png">
+      <span>Perfil</span>
+    </a>
+
+    <a href="dashboard.html" class="menu-item">
+      <img src="../imagenes/calendar.png">
+      <span>Calendario</span>
+    </a>
+
+    <a href="classes.html" class="menu-item">
+      <img src="../imagenes/weightlifting.png">
+      <span>Clases</span>
+    </a>
+
+    <a href="reservas.html" class="menu-item">
+      <img src="../imagenes/appointment.png">
+      <span>Mis reservas</span>
+    </a>
+
+    <a href="admin.html" class="menu-item admin-only active" id="adminBtn">
+      <img src="../imagenes/settings.png">
+      <span>Administración</span>
+    </a>
+
+  </div>
+
+  <div class="mobile-brand">
+    <span>PowerGym</span>
+    <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="brand">
+      <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+      <span>PowerGym</span>
+    </div>
+  </div>
+
+</aside>
+
+  <main class="admin-section">
+
+    <div class="admin-header">
+      <h2>Panel de Administración</h2>
+      <button id="addClassBtn" class="primary-btn">+ Añadir Clase</button>
+    </div>
+
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Clase</th>
+          <th>Instructor</th>
+          <th>Día</th>
+          <th>Mes</th>
+          <th>Hora</th>
+          <th>Plazas</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="classesTableBody">
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+<div class="modal hidden" id="classModal">
+  <div class="modal-content">
+    <h3 id="modalTitle">Nueva Clase</h3>
+
+    <form id="classForm">
+      <input type="hidden" id="classId">
+
+      <div class="form-row">
+        <input id="className" placeholder="Nombre de la clase" required>
+        <input id="classTrainer" placeholder="Instructor" required>
+      </div>
+
+      <div class="form-row">
+        <select id="classDay" required>
+          <option value="">Día</option>
+        </select>
+
+        <select id="classMonth" required>
+          <option value="">Mes</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <select id="classHour" required>
+          <option value="">Hora</option>
+          <option value="08:00">08:00</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+          <option value="19:00">19:00</option>
+        </select>
+
+        <input
+          id="classCapacity"
+          type="number"
+          min="1"
+          placeholder="Plazas totales"
+          required
+        >
+      </div>
+
+      <textarea
+        id="classDescription"
+        placeholder="Descripción de la clase"
+      ></textarea>
+
+      <div class="modal-actions">
+        <button type="button" id="cancelModal">Cancelar</button>
+        <button type="submit" class="primary-btn">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PowerGym · Clases</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/classes.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+
+  <div class="menu">
+
+    <a href="perfil.html" class="menu-item">
+      <img src="../imagenes/person.png">
+      <span>Perfil</span>
+    </a>
+
+    <a href="dashboard.html" class="menu-item">
+      <img src="../imagenes/calendar.png">
+      <span>Calendario</span>
+    </a>
+
+    <a href="classes.html" class="menu-item active">
+      <img src="../imagenes/weightlifting.png">
+      <span>Clases</span>
+    </a>
+
+    <a href="reservas.html" class="menu-item">
+      <img src="../imagenes/appointment.png">
+      <span>Mis reservas</span>
+    </a>
+
+    <a href="admin.html" class="menu-item admin-only" id="adminBtn">
+      <img src="../imagenes/settings.png">
+      <span>Administración</span>
+    </a>
+
+  </div>
+
+  <div class="mobile-brand">
+    <span>PowerGym</span>
+    <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="brand">
+      <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+      <span>PowerGym</span>
+    </div>
+  </div>
+
+</aside>
+
+  <main class="classes-section">
+
+    <h2 class="section-title">Todas las Clases</h2>
+
+    <div class="classes-grid" id="classesGrid">
+    </div>
+
+  </main>
+
+</div>
+
+<script src="../js/classes.js"></script>
+
+</body>
+</html>

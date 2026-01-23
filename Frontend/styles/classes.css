@@ -1,0 +1,154 @@
+.classes-section {
+  padding: 32px;
+  background: #f4f8fc;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 22px;
+  color: #0a3d78;
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+
+.dashboard {
+  grid-template-columns: 220px 1fr;
+  background-color: #d1e5fc;
+}
+
+.classes-section{
+    background-color: #d1e5fc;
+}
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.class-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 2px solid #2f87eb;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.class-card h3 {
+  font-size: 18px;
+  color: #0a3d78;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.class-card .trainer {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.class-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.meta-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.meta-date .meta-icon {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(95%)
+          saturate(748%) hue-rotate(359deg) brightness(102%) contrast(103%);
+}
+
+.meta-capacity {
+  color: #2f87eb;
+}
+
+.meta-capacity .meta-icon {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(92%)
+          saturate(2070%) hue-rotate(198deg) brightness(97%) contrast(98%);
+}
+
+.class-card.warning {
+  border-color: #4caf50;
+}
+
+.class-card.danger {
+  border-color: #e07070;
+}
+
+.meta-capacity.danger {
+  color: #d9534f;
+  font-weight: 600;
+}
+
+.meta-capacity.danger img {
+  filter: invert(27%) sepia(89%) saturate(3576%) hue-rotate(344deg);
+}
+
+@media (max-width: 768px) {
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    height: 64px;
+    padding: 0 16px;
+    align-items: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .menu-item span {
+    display: none;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .mobile-brand {
+    display: flex;
+  }
+
+  .classes-section {
+    padding: 16px;
+  }
+
+  .classes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-card {
+    width: 100%;
+  }
+}

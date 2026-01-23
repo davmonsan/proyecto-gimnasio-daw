@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clases del gimnasio</title>
+</head>
+<body>
+
+  <h1>Clases disponibles</h1>
+
+  <ul id="ListaClases"></ul>
+
+  <script>
+    fetch("http://localhost:3000/api/clases")
+      .then(response => response.json())
+      .then(clases => {
+        const list = document.getElementById("ListaClases");
+
+        clases.forEach(c => {
+          const li = document.createElement("li");
+          li.textContent = `${c.name} - ${c.day_of_week} a las ${c.time} (Plazas: ${c.available_capacity})`;
+          list.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  </script>
+
+</body>
+</html>

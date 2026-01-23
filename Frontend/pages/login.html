@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>PowerGym - Iniciar sesion</title>
+  <link rel="stylesheet" href="../styles/stylesLogReg.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+<div class="container">
+
+  <section class="left">
+    <div class="overlay">
+      <div class="brand">
+        <div class="logo">
+            <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+        </div>
+        <h1>PowerGym</h1>
+        <p>Únete a nuestra comunidad fitness</p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <h2>500+</h2>
+          <span>Miembros</span>
+        </div>
+        <div>
+          <h2>50+</h2>
+          <span>Clases</span>
+        </div>
+        <div>
+          <h2>24/7</h2>
+          <span>Acceso</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="right">
+    <div class="form-container">
+      <h2>Iniciar Sesión</h2>
+      <p class="subtitle">Bienvenido de nuevo, continúa tu entrenamiento</p>
+
+      <form id="loginForm">
+        <label>Correo Electrónico</label>
+        <div class="input-group">
+            <span class="icon">
+                <img src="../imagenes/mail.png">
+            </span>
+            <input type="email" id="email" placeholder="tu@email.com">
+        </div>
+
+        <label>Contraseña</label>
+        <div class="input-group">
+            <span class="icon">
+                <img src="../imagenes/padlock.png">
+            </span>
+            <input type="password" id="password" placeholder="••••••••">
+        </div>
+
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+
+      <p class="login">
+        ¿No tienes una cuenta? <a href="registro.html">Registrate aquí</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<script src="../js/login.js"></script>
+<div id="toast" class="toast"></div>
+</body>
+</html>

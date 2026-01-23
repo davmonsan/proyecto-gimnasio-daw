@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>PowerGym - Crear Cuenta</title>
+  <link rel="stylesheet" href="../styles/stylesLogReg.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+<div class="container">
+
+  <section class="left">
+    <div class="overlay">
+      <div class="brand">
+        <div class="logo">
+            <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+        </div>
+        <h1>PowerGym</h1>
+        <p>Únete a nuestra comunidad fitness</p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <h2>500+</h2>
+          <span>Miembros</span>
+        </div>
+        <div>
+          <h2>50+</h2>
+          <span>Clases</span>
+        </div>
+        <div>
+          <h2>24/7</h2>
+          <span>Acceso</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="right">
+    <div class="form-container">
+      <h2>Crear Cuenta</h2>
+      <p class="subtitle">Comienza tu transformación hoy</p>
+
+      <form id="registerForm">
+        <label>Nombre Completo</label>
+        <div class="input-group">
+            <span class="icon">
+                <img src="../imagenes/person.png" alt="">
+            </span>
+            <input type="text" id="full_name" placeholder="Tu nombre">
+        </div>
+
+        <label>Correo Electrónico</label>
+        <div class="input-group">
+            <span class="icon">
+                <img src="../imagenes/mail.png">
+            </span>
+            <input type="email" id="email" placeholder="tu@email.com">
+        </div>
+
+        <label>Teléfono</label>
+        <div class="input-group">
+            <span class="icon">
+                <img src="../imagenes/telephone.png">
+            </span>
+            <input type="tel" id="phone" placeholder="+34 123 456 789">
+        </div>
+
+        <label>Contraseña</label>
+        <div class="input-group">
+            <span class="icon">
+                <img src="../imagenes/padlock.png">
+            </span>
+            <input type="password" id="password" placeholder="••••••••">
+        </div>
+
+        <label>Confirmar Contraseña</label>
+        <div class="input-group">
+            <span class="icon">
+                <img src="../imagenes/padlock.png">
+            </span>
+            <input type="password" id="confirmPassword" placeholder="••••••••">
+        </div>
+
+        <div class="terms">
+            <input type="checkbox" id="terms" />
+            <span>
+                Acepto los <a href="#">términos y condiciones</a> y la
+                <a href="#">política de privacidad</a>
+            </span>
+        </div>
+
+        <button type="submit">Crear Cuenta</button>
+
+      </form>
+
+      <p class="login">
+        ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
+      </p>
+    </div>
+  </section>
+
+</div>
+<div id="toast" class="toast"></div>
+<script src="../js/register.js"></script>
+</body>
+</html>

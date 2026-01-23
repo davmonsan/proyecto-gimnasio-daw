@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PowerGym - Calendario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+
+  <div class="menu">
+
+    <a href="perfil.html" class="menu-item">
+      <img src="../imagenes/person.png">
+      <span>Perfil</span>
+    </a>
+
+    <a href="dashboard.html" class="menu-item active">
+      <img src="../imagenes/calendar.png">
+      <span>Calendario</span>
+    </a>
+
+    <a href="classes.html" class="menu-item">
+      <img src="../imagenes/weightlifting.png">
+      <span>Clases</span>
+    </a>
+
+    <a href="reservas.html" class="menu-item">
+      <img src="../imagenes/appointment.png">
+      <span>Mis reservas</span>
+    </a>
+
+    <a href="admin.html" class="menu-item admin-only" id="adminBtn">
+      <img src="../imagenes/settings.png">
+      <span>Administración</span>
+    </a>
+
+  </div>
+
+  <div class="mobile-brand">
+    <span>PowerGym</span>
+    <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="brand">
+      <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+      <span>PowerGym</span>
+    </div>
+  </div>
+
+</aside>
+
+<main class="calendar-section">
+
+  <div class="calendar-header">
+    <button class="arrow" id="prevMonth"><img src="../imagenes/arrow.png"></button>
+    <h2 id="monthTitle"></h2>
+    <button class="arrow" id="nextMonth"><img src="../imagenes/right-arrow.png"></button>
+  </div>
+
+  <div class="calendar">
+
+    <div class="calendar-row header">
+      <div class="hour-cell"></div>
+      <div>Lun</div>
+      <div>Mar</div>
+      <div>Mié</div>
+      <div>Jue</div>
+      <div>Vie</div>
+      <div>Sáb</div>
+    </div>
+
+    <div class="separatorMañana">☀️ Mañanas</div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">08:00</div>
+      <div class="cell" data-day="1" data-hour="08:00"></div>
+      <div class="cell" data-day="2" data-hour="08:00"></div>
+      <div class="cell" data-day="3" data-hour="08:00"></div>
+      <div class="cell" data-day="4" data-hour="08:00"></div>
+      <div class="cell" data-day="5" data-hour="08:00"></div>
+      <div class="cell" data-day="6" data-hour="08:00"></div>
+    </div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">09:00</div>
+      <div class="cell" data-day="1" data-hour="09:00"></div>
+      <div class="cell" data-day="2" data-hour="09:00"></div>
+      <div class="cell" data-day="3" data-hour="09:00"></div>
+      <div class="cell" data-day="4" data-hour="09:00"></div>
+      <div class="cell" data-day="5" data-hour="09:00"></div>
+      <div class="cell" data-day="6" data-hour="09:00"></div>
+    </div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">10:00</div>
+      <div class="cell" data-day="1" data-hour="10:00"></div>
+      <div class="cell" data-day="2" data-hour="10:00"></div>
+      <div class="cell" data-day="3" data-hour="10:00"></div>
+      <div class="cell" data-day="4" data-hour="10:00"></div>
+      <div class="cell" data-day="5" data-hour="10:00"></div>
+      <div class="cell" data-day="6" data-hour="10:00"></div>
+    </div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">11:00</div>
+      <div class="cell" data-day="1" data-hour="11:00"></div>
+      <div class="cell" data-day="2" data-hour="11:00"></div>
+      <div class="cell" data-day="3" data-hour="11:00"></div>
+      <div class="cell" data-day="4" data-hour="11:00"></div>
+      <div class="cell" data-day="5" data-hour="11:00"></div>
+      <div class="cell" data-day="6" data-hour="11:00"></div>
+    </div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">12:00</div>
+      <div class="cell" data-day="1" data-hour="12:00"></div>
+      <div class="cell" data-day="2" data-hour="12:00"></div>
+      <div class="cell" data-day="3" data-hour="12:00"></div>
+      <div class="cell" data-day="4" data-hour="12:00"></div>
+      <div class="cell" data-day="5" data-hour="12:00"></div>
+      <div class="cell" data-day="6" data-hour="12:00"></div>
+    </div>
+
+    <div class="separatorTarde">🌙 Tardes</div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">17:00</div>
+      <div class="cell" data-day="1" data-hour="17:00"></div>
+      <div class="cell" data-day="2" data-hour="17:00"></div>
+      <div class="cell" data-day="3" data-hour="17:00"></div>
+      <div class="cell" data-day="4" data-hour="17:00"></div>
+      <div class="cell" data-day="5" data-hour="17:00"></div>
+      <div class="cell" data-day="6" data-hour="17:00"></div>
+    </div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">18:00</div>
+      <div class="cell" data-day="1" data-hour="18:00"></div>
+      <div class="cell" data-day="2" data-hour="18:00"></div>
+      <div class="cell" data-day="3" data-hour="18:00"></div>
+      <div class="cell" data-day="4" data-hour="18:00"></div>
+      <div class="cell" data-day="5" data-hour="18:00"></div>
+      <div class="cell" data-day="6" data-hour="18:00"></div>
+    </div>
+
+    <div class="calendar-row">
+      <div class="hour-cell">19:00</div>
+      <div class="cell" data-day="1" data-hour="19:00"></div>
+      <div class="cell" data-day="2" data-hour="19:00"></div>
+      <div class="cell" data-day="3" data-hour="19:00"></div>
+      <div class="cell" data-day="4" data-hour="19:00"></div>
+      <div class="cell" data-day="5" data-hour="19:00"></div>
+      <div class="cell" data-day="6" data-hour="19:00"></div>
+    </div>
+
+  </div>
+
+</main>
+
+  <aside class="class-info" id="classInfo">
+    <div class="panel">
+
+    <h3 id="className">Selecciona una clase</h3>
+
+    <div class="info-block">
+      <span class="label">Instructor</span>
+      <span id="classTrainer">—</span>
+    </div>
+
+    <div class="info-block">
+      <span class="label">Plazas disponibles</span>
+      <span>
+        <span id="classAvailable">—</span> /
+        <span id="classMax">—</span>
+      </span>
+    </div>
+
+    <button id="reserveBtn" disabled>
+      Reservar plaza
+    </button>
+
+    <div class="description">
+      <p id="classDescription">
+        Haz click en una clase del calendario para ver más información.
+      </p>
+    </div>
+    </div>
+
+  </aside>
+
+</div>
+<script src="../js/dashboard.js"></script>
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PowerGym · Perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../styles/dashboard.css">
+  <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <aside class="sidebar">
+
+  <div class="menu">
+
+    <a href="perfil.html" class="menu-item active">
+      <img src="../imagenes/person.png">
+      <span>Perfil</span>
+    </a>
+
+    <a href="dashboard.html" class="menu-item">
+      <img src="../imagenes/calendar.png">
+      <span>Calendario</span>
+    </a>
+
+    <a href="classes.html" class="menu-item">
+      <img src="../imagenes/weightlifting.png">
+      <span>Clases</span>
+    </a>
+
+    <a href="reservas.html" class="menu-item">
+      <img src="../imagenes/appointment.png">
+      <span>Mis reservas</span>
+    </a>
+
+    <a href="admin.html" class="menu-item admin-only" id="adminBtn">
+      <img src="../imagenes/settings.png">
+      <span>Administración</span>
+    </a>
+
+  </div>
+
+  <div class="mobile-brand">
+    <span>PowerGym</span>
+    <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="brand">
+      <img src="../imagenes/Icon.svg" alt="PowerGym logo">
+      <span>PowerGym</span>
+    </div>
+  </div>
+
+</aside>
+
+  <main class="profile-section">
+
+    <div class="profile-header">
+
+      <div class="profile-avatar">
+        <img id="profileImage" src="../imagenes/person.png" alt="Foto de perfil">
+
+        <div class="avatar-overlay" id="avatarOverlay">
+            <span>Editar</span>
+        </div>
+
+        <input type="file" id="avatarInput" accept="image/*" hidden>
+    </div>
+
+      <h2 class="profile-name" id="profileName"></h2>
+
+      <div class="profile-status">
+        <span class="status-dot" id="profileStatusDot"></span>
+        <span id="profileStatusText"></span>
+      </div>
+
+    </div>
+
+    <div class="profile-cards">
+
+      <div class="profile-card">
+        <div class="icon email">
+          <img src="../imagenes/mail.png">
+        </div>
+        <div class="info">
+          <span class="label">Correo electrónico</span>
+          <span class="value" id="profileEmail"></span>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="icon phone">
+          <img src="../imagenes/telephone.png">
+        </div>
+        <div class="info">
+          <span class="label">Teléfono</span>
+          <span class="value" id="profilePhone"></span>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="icon calendar">
+          <img src="../imagenes/calendar.png">
+        </div>
+        <div class="info">
+          <span class="label">Miembro desde</span>
+          <span class="value" id="profileMemberSince"></span>
+        </div>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">
+        Cerrar sesión
+      </button>
+
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="../js/profile.js"></script>
+
+</body>
+</html>
