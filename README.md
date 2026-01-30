@@ -11,12 +11,16 @@
 
 
 
-Proyecto de Gestión de Reservas para Gimnasio
+# Proyecto documental despliegue de aplicaciones Web
+
+## Introducción
 
 Este repositorio contiene el desarrollo del proyecto intermodular del ciclo Desarrollo de Aplicaciones Web (DAW).
 El objetivo es crear una aplicación web de gestión de reservas de clases para un gimnasio, permitiendo a los usuarios consultar el calendario de actividades, registrarse y realizar reservas, mientras que el administrador podrá gestionar clases, horarios y usuarios.
 
-El proyecto se desarrolla utilizando Node.js con Express, MySQL, y una interfaz diseñada previamente en Figma, siguiendo la planificación y alcance definidos en la propuesta inicial del proyecto
+## Documentación
+
+El proyecto se desarrolla utilizando Node.js con Express para el backend, MySQL como base de datos, y una interfaz diseñada previamente en Figma y hecha con HTML5 y CSS3 + JavaScript para el frontend, siguiendo la planificación y alcance definidos en la propuesta inicial del proyecto.
 
 | NOMBRE PROYECTO           | DESCRIPCIÓN |
 |---------------------------|-------------|
