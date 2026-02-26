@@ -24,7 +24,7 @@ const months = [
 
 //Cargar clases
 function loadClasses() {
-  fetch("http://localhost:3000/api/clases")
+  fetch("/api/clases")
     .then(res => res.json())
     .then(classes => {
       classesGrid.innerHTML = "";

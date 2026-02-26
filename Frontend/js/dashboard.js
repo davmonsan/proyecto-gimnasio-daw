@@ -94,7 +94,7 @@ function isSameMonth(classDate) {
 function loadClasses() {
 
   Promise.all([
-    fetch("http://localhost:3000/api/clases").then(res => res.json()),
+    fetch("/api/clases").then(res => res.json()),
     loadUserReservations()
   ])
     .then(([classes, userReservations]) => {
@@ -184,7 +184,7 @@ function loadClasses() {
 //Reservar plaza
 reserveBtn.addEventListener("click", () => {
 
-  fetch("http://localhost:3000/api/reservas", {
+  fetch("/api/reservas", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -217,7 +217,7 @@ reserveBtn.addEventListener("click", () => {
 
 //Primera carga
 function loadUserReservations() {
-  return fetch(`http://localhost:3000/api/reservas/${user.id}`)
+  return fetch(`/api/reservas/${user.id}`)
     .then(res => res.json());
 }
 

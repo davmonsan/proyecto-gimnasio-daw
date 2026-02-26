@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-01-2026 a las 18:37:14
+-- Tiempo de generación: 26-02-2026 a las 21:44:44
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -43,14 +43,13 @@ CREATE TABLE `clases` (
 --
 
 INSERT INTO `clases` (`id`, `name`, `description`, `class_date`, `class_time`, `trainer`, `max_capacity`, `available_capacity`) VALUES
-(14, 'Yoga', 'Clase de yoga mensual', '2026-01-03', '09:00:00', 'Marta Fit', 15, 15),
-(15, 'Spinning', 'Clase de spinning intensa', '2026-01-05', '18:00:00', 'Luis Bike', 12, 12),
-(16, 'Cross Training', 'Entrenamiento funcional', '2026-01-10', '19:00:00', 'Pedro Strong', 10, 10),
-(18, 'Yoga', 'Clase de yoga mensual', '2026-02-03', '09:00:00', 'Marta Fit', 15, 15),
+(16, 'Cross Training', 'Entrenamiento funcional', '2026-01-10', '19:00:00', 'Pedro Strong', 10, 9),
+(18, 'Yoga', 'Clase de yoga mensual', '2026-02-03', '09:00:00', 'Marta Fit', 15, 14),
 (19, 'Boxeo', 'Boxeo nivel intermedio', '2026-02-07', '19:00:00', 'Roberto Box', 8, 8),
 (20, 'BodyPump', 'Entrenamiento con pesas', '2026-02-12', '18:00:00', 'Laura Power', 15, 15),
-(21, 'Zumba', 'Zumba divertida y dinámica', '2026-02-20', '17:00:00', 'Sofía Dance', 20, 20),
-(22, 'Pilates', 'Pilates para todos los niveles', '2026-01-06', '17:00:00', 'Ana Core', 14, 14);
+(21, 'Zumba', 'Zumba divertida y dinámica', '2026-02-20', '17:00:00', 'Sofía Dance', 20, 19),
+(22, 'Pilates', 'Pilates para todos los niveles', '2026-01-06', '17:00:00', 'Ana Core', 14, 13),
+(26, 'Spinning', 'Spinning', '2026-01-05', '17:00:00', 'Luis', 15, 15);
 
 -- --------------------------------------------------------
 
@@ -64,6 +63,16 @@ CREATE TABLE `reservas` (
   `class_id` int(11) NOT NULL,
   `reservation_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `reservas`
+--
+
+INSERT INTO `reservas` (`id`, `user_id`, `class_id`, `reservation_date`) VALUES
+(63, 15, 22, '2026-01-31 03:02:08'),
+(64, 15, 16, '2026-01-31 03:02:11'),
+(65, 3, 18, '2026-02-14 11:43:16'),
+(67, 3, 21, '2026-02-14 11:43:21');
 
 -- --------------------------------------------------------
 
@@ -91,7 +100,11 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `phone`, `password`, `role`, `c
 (3, 'Admin', 'admin@gym.com', '123456789', '$2b$10$3E/YfijyRgY5DIhp3TUljeohiDXQ.YmDSsByMFRibCDmfTbaTMtBG', 'admin', '2025-12-25 18:54:47', 'default.png'),
 (9, 'Ana López', 'ana@gym.com', '600111222', '$2b$10$fwCPPuGt4ieOM.5GDS/Qx.WBOXgisCMotuOXRMlqO35M2fBogCOna', 'user', '2026-01-22 20:20:37', 'default.png'),
 (10, 'Carlos Ruiz', 'carlos@gym.com', '600333444', '$2b$10$oX4qR/vMv9fdyLgW21LlROGYUY45pSgzjCggo0PNCniar3FD/qnsi', 'user', '2026-01-22 20:21:04', 'default.png'),
-(11, 'Laura Gómez', 'laura@gym.com', '600555666', '$2b$10$b3XUGdTBwkQn/LlHzPLJxOc8ULBTRWKZe1IvMYxRj9kfaqdOmMT3K', 'user', '2026-01-22 20:21:26', 'default.png');
+(11, 'Laura Gómez', 'laura@gym.com', '600555666', '$2b$10$b3XUGdTBwkQn/LlHzPLJxOc8ULBTRWKZe1IvMYxRj9kfaqdOmMT3K', 'user', '2026-01-22 20:21:26', 'default.png'),
+(12, 'David', 'prueba@gmail.com', '600000000', '$2b$10$LySbEISVD.f.opY2o5B2/.ZJLlG1n/OKnemQBFDQSrTI/DGeSM9zK', 'user', '2026-01-23 17:45:38', 'default.png'),
+(13, 'David Monzón Sánchez', 'prueba2@gmail.com', '600111222', '$2b$10$/Xc1jHwr5XUO/4sZRuho9eGov3CjFDPcw1m5RHAyoC/xmvfs..DIe', 'user', '2026-01-23 18:06:02', '/uploads/profile-images/user_13.jpg'),
+(14, 'David', 'patata@gmail.com', '1000222000', '$2b$10$TV3fe9bEWhCO6PgpByLW2uPkZaN.6K4s.j2C1/hUGgWsFTYztgykC', 'user', '2026-01-23 18:08:13', 'default.png'),
+(15, 'Adrián Feliu Martinez', 'adrian@gmail.com', '600000123', '$2b$10$R5RNOBC2vjUP3smUe/JbJ.saOOnHj03ZnRh.joBnujvtpp27hjvsi', 'user', '2026-01-31 03:00:51', '/uploads/profile-images/user_15.jpeg');
 
 --
 -- Índices para tablas volcadas
@@ -126,19 +139,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `clases`
 --
 ALTER TABLE `clases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas

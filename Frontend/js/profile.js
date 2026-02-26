@@ -48,7 +48,7 @@ function loadProfile() {
 
   if (user.profile_image) {
     profileImage.src =
-      `http://localhost:3000${user.profile_image}?t=${Date.now()}`;
+      `${user.profile_image}?t=${Date.now()}`;
   } else {
     profileImage.src = "../imagenes/person.png";
   }
@@ -78,7 +78,7 @@ function uploadProfileImage(file) {
   formData.append("image", file);
   formData.append("userId", user.id);
 
-  fetch(`http://localhost:3000/api/users/${user.id}/profile-image`, {
+  fetch(`/api/users/${user.id}/profile-image`, {
     method: "POST",
     body: formData
   })
@@ -90,7 +90,7 @@ function uploadProfileImage(file) {
         localStorage.setItem("user", JSON.stringify(user));
 
         profileImage.src =
-          `http://localhost:3000${data.imageUrl}?t=${Date.now()}`;
+          `${data.imageUrl}?t=${Date.now()}`;
       }
     })
     .catch(err => {

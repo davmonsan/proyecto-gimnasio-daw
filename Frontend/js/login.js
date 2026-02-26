@@ -16,7 +16,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  fetch("http://localhost:3000/api/login", {
+  fetch("/api/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -32,7 +32,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
       localStorage.setItem("user", JSON.stringify(data));
 
-      window.location.href = "dashboard.html";
+      window.location.href = "/pages/dashboard.html";
     })
     .catch(err => {
       console.error(err);

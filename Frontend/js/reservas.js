@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
   //Cargar reservas
   function loadReservas() {
-    fetch(`http://localhost:3000/api/reservas/${user.id}`)
+    fetch(`/api/reservas/${user.id}`)
       .then(res => res.json())
       .then(reservas => {
         reservasGrid.innerHTML = "";
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //Cancelar reserva
   function cancelReserva(reservationId) {
-  fetch(`http://localhost:3000/api/reservas/${reservationId}`, {
+  fetch(`/api/reservas/${reservationId}`, {
     method: "DELETE"
   })
     .then(res => res.json())

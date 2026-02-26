@@ -21,7 +21,7 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
   const confirmPassword = document.getElementById("confirmPassword").value;
   const termsAccepted = document.getElementById("terms").checked;
 
-  fetch("http://localhost:3000/api/register", {
+  fetch("/api/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

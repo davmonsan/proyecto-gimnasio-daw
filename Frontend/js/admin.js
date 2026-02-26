@@ -57,7 +57,7 @@ months.forEach((m, i) => {
 
 //Cargar clases
 function loadClasses() {
-  fetch("http://localhost:3000/api/clases")
+  fetch("/api/clases")
     .then(res => res.json())
     .then(classes => {
       tableBody.innerHTML = "";
@@ -111,7 +111,7 @@ cancelModal.onclick = () => modal.classList.add("hidden");
 
 //Editar clase
 window.editClass = (id) => {
-  fetch(`http://localhost:3000/api/clases/${id}`)
+  fetch(`/api/clases/${id}`)
     .then(res => res.json())
     .then(c => {
 
@@ -182,8 +182,8 @@ classForm.onsubmit = (e) => {
 
   const method = editingClassId ? "PUT" : "POST";
   const url = editingClassId
-    ? `http://localhost:3000/api/clases/${editingClassId}`
-    : `http://localhost:3000/api/clases`;
+    ? `/api/clases/${editingClassId}`
+    : `/api/clases`;
 
   fetch(url, {
     method,
@@ -208,7 +208,7 @@ function deleteClass(classId) {
     return;
   }
 
-  fetch(`http://localhost:3000/api/clases/${classId}`, {
+  fetch(`/api/clases/${classId}`, {
     method: "DELETE"
   })
     .then(res => res.json())
