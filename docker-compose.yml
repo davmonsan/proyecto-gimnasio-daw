@@ -1,13 +1,21 @@
-version: '3.8'
-
 services:
-  app:
-    build: .
-    container_name: powergym_app
-    ports:
-      - "80:3000"
+  db:
+    image: mysql:8
+    container_name: powergym_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: powergym_app
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - ./Backend/uploads:/app/Backend/uploads
+      - db_data:/var/lib/mysql
+    networks:
+      - powergym_network
+
+  app:
+    image: powergym-app
+    container_name: powergym_app
+    restart: always
     depends_on:
       - db
     environment:
@@ -15,20 +23,27 @@ services:
       DB_USER: root
       DB_PASSWORD: rootpassword
       DB_NAME: powergym_app
-    restart: always
-
-  db:
-    image: mysql:8
-    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-    container_name: powergym_db
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: powergym_app
-    ports:
-      - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - ./Backend/uploads:/app/Backend/uploads
+    networks:
+      - powergym_network
+
+  nginx:
+    image: nginx:latest
+    container_name: powergym_nginx
     restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - powergym_network
 
 volumes:
-  mysql_data:
+  db_data:
+
+networks:
+  powergym_network:
+    driver: bridge
