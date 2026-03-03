@@ -1,14 +1,40 @@
 # PowerGym
 
 ## Instalación
-1. Importar `database/powergym_app.sql` en phpMyAdmin
-2. Abrir la carpeta Backend
-3. Ejecutar:
-   npm install
-   node app.js
-4. Abrir Frontend/login.html con LiveServer
 
+La aplicación se ejecuta completamente en contenedores Docker.
 
+---
+
+# Ejecución en Local con Docker
+
+## Requisitos
+
+- Docker instalado
+- Git instalado
+
+No es necesario tener Node, npm o MySQL instalados en el sistema.
+
+---
+
+## 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/davmonsan/proyecto-gimnasio-daw.git
+cd proyecto-gimnasio-daw.git
+```
+## 2. Clonar el repositorio
+
+```bash
+docker compose up -d --build
+```
+## 3. Importar la base de datos (solo la primera vez)
+
+```bash
+docker exec -i powergym_db mysql -uroot -prootpassword powergym_app < powergym_app.sql
+```
+## 4. Acceder a la aplicación
+http://localhost
 
 
 # Proyecto documental despliegue de aplicaciones Web
@@ -27,16 +53,6 @@ El proyecto se desarrolla utilizando Node.js con Express para el backend, MySQL 
 El flujo de despliegue del proyecto sigue una arquitectura cliente-servidor.  
 El código fuente se desarrolla en local utilizando Visual Studio Code y se gestiona mediante Git para el control de versiones.
 
-### Infraestructura necesaria
-
-Para el correcto funcionamiento del proyecto es necesaria la siguiente infraestructura:
-
-- Un servidor con sistema operativo Linux o Windows
-- Node.js instalado para ejecutar la aplicación backend
-- Un servidor web (Express.js)
-- Servidor de base de datos MySQL
-- Navegador web para el acceso de los usuarios
-- Repositorio GitHub para el control de versiones
 
 ### Servicios dependientes
 
